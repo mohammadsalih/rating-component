@@ -1,0 +1,161 @@
+/*
+    SPACING SYSTEM (px)
+      2 / 4 / 8 / 12 / 16 / 24 / 30 / 48 / 64 / 80 / 96 / 128
+    FONT SIZE SYSTEM (px)
+      10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+*/
+/* 
+    colors
+    ### Primary
+    - Orange: hsl(25, 97%, 53%)
+
+    ### Neutral
+    - White: hsl(0, 0%, 100%)
+    - Light Grey: hsl(217, 12%, 63%)
+    - Medium Grey: hsl(216, 12%, 54%)
+    - Dark Blue: hsl(213, 19%, 18%)
+    - Very Dark Blue: hsl(216, 12%, 8%)
+ */
+
+/* general styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100vh;
+
+  background: hsl(216, 12%, 8%);
+  color: hsl(0, 0%, 100%);
+
+  font-family: "Overpass", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+/* component styling */
+.Rating-box {
+  padding: 30px;
+
+  display: flex;
+  flex-direction: column;
+
+  width: 425px;
+  height: 425px;
+
+  background: linear-gradient(hsl(214, 19%, 17%), hsl(215, 27%, 12%));
+
+  border-radius: 30px;
+}
+.rating-icon-box {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 50px;
+  height: 50px;
+
+  background: hsl(214.29, 14.58%, 18.82%);
+  border-radius: 100px;
+}
+.heading {
+  margin-bottom: 16px;
+
+  font-size: 30px;
+}
+.peragraph {
+  margin-bottom: 30px;
+
+  color: hsl(217, 12%, 63%);
+
+  line-height: 1.6;
+}
+.rate-list {
+  margin-bottom: 30px;
+
+  display: flex;
+  justify-content: space-between;
+}
+.rate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 50px;
+  height: 50px;
+
+  background: hsl(214.29, 14.58%, 18.82%);
+  border-radius: 100px;
+
+  text-decoration: none;
+  color: hsl(0, 0%, 100%);
+  transition: all ease 0.3s;
+}
+.rate:hover {
+  background-color: hsl(216, 12%, 54%);
+}
+
+.active,
+.active:hover {
+  background-color: hsl(25, 97%, 53%);
+}
+
+/* thank you state styling */
+#thankyou-state {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+#thankyou-state img {
+  margin-bottom: 32px;
+
+  display: flex;
+  align-items: center;
+
+  width: 175px;
+  height: auto;
+}
+
+.rate-selected {
+  margin-bottom: 32px;
+  padding: 8px 16px;
+
+  border-radius: 100px;
+
+  background-color: hsl(217, 14%, 18%);
+  color: hsl(25, 97%, 53%);
+}
+
+#thankyou-state .peragraph {
+  margin-bottom: 0;
+}
+
+/* btn style */
+.btn {
+  padding: 16px;
+
+  background: hsl(25, 97%, 53%);
+  color: hsl(0, 0%, 100%);
+
+  text-transform: uppercase;
+  letter-spacing: 2px;
+
+  border: none;
+  border-radius: 100px;
+  transition: all ease 0.3s;
+}
+
+.btn:hover {
+  background: hsl(0, 0%, 100%);
+  color: hsl(25, 97%, 53%);
+}

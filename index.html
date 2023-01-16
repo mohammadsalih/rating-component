@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>feedback card</title>
+  </head>
+  <body>
+    <div id="rating-state" class="Rating-box">
+      <div class="rating-icon-box">
+        <img src="images/icon-star.svg" class="rating-icon" />
+      </div>
+      <h3 class="heading">How did we do?</h3>
+      <p class="peragraph">
+        Please let us know how we did with your support request. All feedback is
+        appreciated to help us improve our offering!
+      </p>
+      <div class="rate-list">
+        <a href="#" onclick="active(event)" class="rate">1</a>
+        <a href="#" onclick="active(event)" class="rate">2</a>
+        <a href="#" onclick="active(event)" class="rate">3</a>
+        <a href="#" onclick="active(event)" class="rate">4</a>
+        <a href="#" onclick="active(event)" class="rate">5</a>
+      </div>
+
+      <button class="btn" onclick="submit()">Submit</button>
+    </div>
+    <!-- Rating state start -->
+
+    <!-- Rating state end -->
+
+    <!-- Thank you state start -->
+    <div id="thankyou-state" class="Rating-box hide">
+      <img src="images/illustration-thank-you.svg" alt="" />
+      <p class="rate-selected">
+        You selected <span id="rate_amount"> 4 </span> out of 5
+      </p>
+      <h3 class="heading">Thank you!</h3>
+      <p class="peragraph">
+        We appreciate you taking the time to give a rating. If you ever need
+        more support, don’t hesitate to get in touch!
+      </p>
+    </div>
+
+    <!-- Thank you state end -->
+
+    <!-- java script -->
+    <script>
+      let rate = 0;
+
+      function active(event) {
+        let element = event.target;
+        let elements = document.getElementsByClassName("rate");
+
+        for (let i = 0; i < elements.length; i++) {
+          elements[i].classList.remove("active");
+        }
+
+        element.classList.add("active");
+
+        rate = element.innerHTML;
+      }
+
+      function submit() {
+        let rate_amount = document.getElementById("rate_amount");
+        let rs = document.getElementById("rating-state");
+        let ts = document.getElementById("thankyou-state");
+
+        rate_amount.innerHTML = rate;
+
+        if (parseInt(rate) > 1) {
+          rs.style.display = "none";
+          ts.style.display = "flex";
+        }
+      }
+    </script>
+  </body>
+</html>
